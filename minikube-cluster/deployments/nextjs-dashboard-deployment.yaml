@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextjs-dashboard-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextjs-dashboard-deployment
+  template:
+    metadata:
+      labels:
+        app: nextjs-dashboard-deployment
+    spec:
+      containers:
+        - name: nextjs-dashboard
+          image: sarithh/nextjs-dashboard:v1.0
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"  
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+      imagePullSecrets:
+        - name: docker-secret

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextjs-dashboard-service
+spec:
+  selector:
+    app: nextjs-dashboard-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 30724
+  type: NodePort
