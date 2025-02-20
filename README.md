@@ -12,6 +12,5 @@ This repository contains a **Next.js Dashboard** application, originally taken f
 - **Next.js**: React framework for building the dashboard application
 - **Docker**: To containerize the application
 - **Kubernetes (Minikube)**: For local Kubernetes cluster and deployment
-- **NodePort**: Service type for external access
 
 **This project is for learning purposes only.**
