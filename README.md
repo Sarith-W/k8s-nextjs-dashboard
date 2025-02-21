@@ -1,6 +1,7 @@
 # Next.js Dashboard on Kubernetes (Minikube)
 
 This repository contains a **Next.js Dashboard** application, originally taken from the official Next.js course [Next.js Learn - Dashboard App](https://nextjs.org/learn/dashboard-app), and deployed locally using **Kubernetes (Minikube)** with **Docker**.
+Additionally, it has been deployed to **Vercel** for learning purposes.
 
 ## 🚀 Features
 - Next.js dashboard implementation from the official Next.js course
