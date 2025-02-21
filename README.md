@@ -13,4 +13,46 @@ This repository contains a **Next.js Dashboard** application, originally taken f
 - **Docker**: To containerize the application
 - **Kubernetes (Minikube)**: For local Kubernetes cluster and deployment
 
+## 🏗️ Deployment Steps  
+
+### **1️⃣ Build and Push the Docker Image**  
+
+**Implemented the Dockerfile** and built the Docker image:  
+```sh
+docker build -t sarithh/nextjs-dashboard:v2.0 .
+```
+**Pushed the image** to Docker Hub:
+```sh
+docker push sarithh/nextjs-dashboard:v2.0
+```
+
+### **2️⃣ Start Minikube**
+```sh
+minikube start
+```
+
+### **3️⃣ Create Kubernetes Secret for Docker Login**
+```sh
+k create secret docker-registry docker-secret \
+  --docker-username=<username> \
+  --docker-password=<personal_access_token> \
+  --docker-email=<email>
+```
+
+### **4️⃣ Create and Deploy Kubernetes Deployments and Services**
+```sh
+k apply -f deployment.yaml
+k apply -f service.yaml
+```
+
+### **5️⃣ Access the Application**
+1. Using **Minikube**:  
+```sh
+minikube service nextjs-dashboard-service -n nextjs-dashboard
+```
+2. Using **Port-Forwarding**:
+```sh
+k port-forward svc/nextjs-dashboard-service 3000:80
+```
+
 **This project is for learning purposes only.**
