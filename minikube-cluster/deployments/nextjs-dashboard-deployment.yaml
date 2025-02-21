@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nextjs-dashboard
-          image: sarithh/nextjs-dashboard:v1.0
+          image: sarithh/nextjs-dashboard:v2.0
           ports:
             - containerPort: 3000
           resources:
